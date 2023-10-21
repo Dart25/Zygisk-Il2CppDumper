@@ -32,6 +32,12 @@ public:
 
     void postAppSpecialize(const AppSpecializeArgs *) override {
         if (enable_hack) {
+            //dump so file
+            auto outPath = std::string(game_data_dir).append("/files/libil2cpp.so");
+            std::ofstream outStream(outPath);
+            outStream.write((char*)data, length);
+            outStream.close();
+
             std::thread hack_thread(hack_prepare, game_data_dir, data, length);
             hack_thread.detach();
         }
