@@ -10,6 +10,7 @@
 #include "zygisk.hpp"
 #include "game.h"
 #include "log.h"
+#include <fstream>
 
 using zygisk::Api;
 using zygisk::AppSpecializeArgs;
